@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<title>ES6 object assign techniques.</title>
+<body>
+    <h2>ES6 object assign techniques.</h2>
+    <h3>Just look at the console.</h3>
+
+    <script>
+        let name = {
+            fullname: "William Carter"
+        };
+        console.table(name);
+
+        let post = {
+            position: "Businees Analyst"
+        };
+        console.table(post);
+
+        let info = Object.assign(name, post);
+
+        console.group();
+        console.table(name);
+        console.table(post);
+        console.table(info);
+        console.groupEnd();
+
+        let fruits1 = Object.assign({apple: 0}, {orange: 1}, {banana: 2});
+        console.table(fruits1);
+
+        let fruits2 = Object.assign({apple: 0}, {apple: 1}, {apple: 2});
+        console.table(fruits2);
+
+        let obj = {person: 'Thor Odinson'};
+        let clone = Object.assign({}, obj);
+
+        console.group();
+        console.table(obj);
+        console.table(clone);
+        console.groupEnd();
+
+        //  GET ALL THE KEYS OF AN OBJECT.
+        console.log(Object.keys(info));
+
+        //  GET ALL THE VALUES OF AN OBJECT.
+        console.log(Object.values(info));
+
+        //  PREVENT AN OBJECT IS EXTENSIBLE.
+        console.log(Object.isExtensible(info));
+        //Object.preventExtensions(info);
+        console.log(Object.isExtensible(info));
+
+        Object.assign(info, obj);
+        console.table(info);
+    </script>
+</body>
+</html>
